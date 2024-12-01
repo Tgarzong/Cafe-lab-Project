@@ -35,6 +35,17 @@
       </div>
     </main>
   </div>
+  <div class="search-bar">
+  <input type="text" id="keyword" placeholder="Buscar por palabra clave...">
+  <select id="category">
+    <option value="">Categoría</option>
+    <option value="cafe">Café</option>
+    <option value="te">Té</option>
+  </select>
+  <input type="number" id="minPrice" placeholder="Precio mínimo">
+  <input type="number" id="maxPrice" placeholder="Precio máximo">
+  <button onclick="applyFilters()">Buscar</button>
+</div>
 
   <script src="./JS/script.js"></script>
 </body>
