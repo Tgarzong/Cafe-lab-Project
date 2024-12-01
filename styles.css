@@ -259,6 +259,17 @@ main {
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
 }
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.search-bar input, .search-bar select, .search-bar button {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
 .disabled {
     display: none;
