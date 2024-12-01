@@ -305,3 +305,37 @@ function actualizarNumerito() {
   //esta función es un acumulador para que el contador del numerito al lado del boton carrito
   //se aumente a medida que damos click
 }
+const products = [
+  { name: "Café Espresso", category: "cafe", price: 2000 },
+  { name: "Té Verde", category: "te", price: 1500 },
+  { name: "Café Americano", category: "cafe", price: 2500 },
+];
+
+function applyFilters() {
+  const keyword = document.getElementById("keyword").value.toLowerCase();
+  const category = document.getElementById("category").value;
+  const minPrice = parseFloat(document.getElementById("minPrice").value) || 0;
+  const maxPrice = parseFloat(document.getElementById("maxPrice").value) || Infinity;
+
+  const filteredProducts = products.filter(product => {
+    return (
+      product.name.toLowerCase().includes(keyword) &&
+      (!category || product.category === category) &&
+      product.price >= minPrice &&
+      product.price <= maxPrice
+    );
+  });
+
+  displayProducts(filteredProducts);
+}
+
+function displayProducts(filteredProducts) {
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = filteredProducts.map(product => `
+    <div class="product">
+      <h3>${product.name}</h3>
+      <p>Categoría: ${product.category}</p>
+      <p>Precio: $${product.price}</p>
+    </div>
+  `).join("");
+}
